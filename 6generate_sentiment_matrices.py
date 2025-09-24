@@ -54,11 +54,10 @@ def generate_sentiment_matrices(data_path, dataset, n_users, n_items, triples_fi
         print(f"Saved: {out_path}")
 
 if __name__ == "__main__":
-    # 修改为你的数据集参数
     data_path = "./data"
     dataset = "elec"
-    n_users = 192403  # 填实际用户数
-    n_items = 63001   # 填实际物品数
-    triples_file = "./data/elec/kg/kg_triples_train.txt"  # 填实际三元组文件路径
+    n_users = 192403  
+    n_items = 63001   
+    triples_file = "./data/elec/kg/kg_triples_train.txt"  
 
     generate_sentiment_matrices(data_path, dataset, n_users, n_items, triples_file)
