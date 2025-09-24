@@ -1,0 +1,19 @@
+embedding_size: 64
+n_ui_layers: [3]
+n_layers: 1
+kg_model: 'RotatE' 
+learning_rate_scheduler: [0.96, 50]
+lambda_coeff: 0.9
+reg_weight: [1e-5]
+learning_rate: 0.001
+save_filtered: true
+cl_loss: 0.01 
+temperature: 0.2
+image_knn_k: [40]
+text_knn_k: [10]
+align_loss: [0.001]
+tau : [0.05,0.1,0.15,0.2,0.25,0.3]
+
+dropout_rate : [0.1]
+
+hyper_parameters: ["reg_weight", "dropout_rate","image_knn_k","text_knn_k", "n_ui_layers","align_loss","tau"]
