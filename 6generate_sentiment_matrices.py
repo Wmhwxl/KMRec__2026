@@ -4,18 +4,19 @@ import scipy.sparse as sp
 
 def generate_sentiment_matrices(data_path, dataset, n_users, n_items, triples_file):
     sentiment_scores = {
-        'feels_very_positive_5': 5,
-        'receives_very_positive_5': 10,
-        'feels_positive_4': 4,
-        'receives_positive_4': 9,
-        'feels_neutral_3': 3,
-        'receives_neutral_3': 8,
-        'feels_negative_2': 2,
-        'receives_negative_2': 7,
-        'feels_very_negative_1': 1,
-        'receives_very_negative_1': 6,
-        'interacts_with': 0
-    }
+            'feels_very_positive_5': 5,
+            'receives_very_positive_5': 11,
+            'feels_positive_4': 4,
+            'receives_positive_4': 10,
+            'feels_neutral_3': 3,
+            'receives_neutral_3': 9,
+            'feels_negative_2': 2,
+            'receives_negative_2': 8,
+            'feels_very_negative_1': 1,
+            'receives_very_negative_1': 7,
+            'receives_nothing': 6,
+            'feels_nothing': 0
+        }
     score2relations = {}
     for k, v in sentiment_scores.items():
         score2relations.setdefault(v, []).append(k)
