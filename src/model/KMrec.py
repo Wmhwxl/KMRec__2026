@@ -448,10 +448,10 @@ class KGMMRec(GeneralRecommender):
         
         user_gate = torch.sigmoid(self.user_kg_gate(user_scene_embeds))
         item_gate = torch.sigmoid(self.item_kg_gate(item_scene_embeds))
-        user_embeds = user_gate * user_scene_embeds +  (1 - user_gate) * user_embeds
-        item_embeds = item_gate * item_scene_embeds +  (1 - item_gate) * item_embeds
-        image_item_embeds = self.multimodal_fusion(item_embeds, self.gate_v(image_feats))
-        text_item_embeds = self.multimodal_fusion(item_embeds, self.gate_t(text_feats))
+        user_embeds = user_gate * user_scene_embeds +   user_embeds
+        item_embeds = item_gate * item_scene_embeds +   item_embeds
+        image_item_embeds = torch.multiply(item_embeds, self.gate_v(image_feats))
+        text_item_embeds = torch.multiply(item_embeds, self.gate_t(text_feats))
         fused_feats = self.multimodal_fusion(text_feats, image_feats)
         fusion_item_embeds = torch.multiply(item_embeds, self.gate_f(fused_feats))
 
