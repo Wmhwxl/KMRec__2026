@@ -344,32 +344,6 @@ bash scripts/evaluate.sh
 
 Please check the script and modify the model name, dataset name, checkpoint path, and GPU ID before running evaluation.
 
-## Output Embeddings
-
-If `--export_emb` is enabled, the learned embeddings will be exported after training.
-
-The exported embeddings are usually saved in the configured embedding output directory, with file names containing the model name, dataset name, and embedding tag.
-
-For example:
-
-```bash
-embeddings/KMRec_baby_if_lf_user.npy
-embeddings/KMRec_baby_if_lf_item.npy
-```
-
-Please check the actual save path in the code if the output directory is customized.
-
-## Notes
-
-Please make sure that:
-
-1. The dataset files are placed in the correct directory.
-2. The knowledge graph files are generated before training.
-3. The knowledge graph is constructed only from the training set.
-4. The model name in the running script is consistent with the implementation in the code.
-5. The GPU ID is available on your machine.
-6. The log directory exists before running the script.
-
 ## Citation
 
 If you use this code or find this work helpful, please cite our paper:
